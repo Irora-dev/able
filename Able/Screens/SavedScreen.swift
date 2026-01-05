@@ -128,8 +128,8 @@ struct SavedItemRow: View {
 
             // Product info
             VStack(alignment: .leading, spacing: AbleSpacing.space1) {
-                if let brand = product.brand {
-                    Text(brand.name)
+                if let brandName = product.brandName {
+                    Text(brandName)
                         .font(AbleTypography.caption1)
                         .foregroundColor(Color.ableSecondaryText(for: colorScheme))
                 }

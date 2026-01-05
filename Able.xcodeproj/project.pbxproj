@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* AbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* AbleApp.swift */; };
+		A10000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000002 /* ContentView.swift */; };
+		A10000010000000000000003 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000003 /* Colors.swift */; };
+		A10000010000000000000004 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000004 /* Typography.swift */; };
+		A10000010000000000000005 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000005 /* Spacing.swift */; };
+		A10000010000000000000006 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000006 /* PrimaryButton.swift */; };
+		A10000010000000000000007 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000007 /* ProductCard.swift */; };
+		A10000010000000000000008 /* FeatureTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000008 /* FeatureTag.swift */; };
+		A10000010000000000000009 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000009 /* SearchBar.swift */; };
+		A10000010000000000000010 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000010 /* EmptyState.swift */; };
+		A10000010000000000000011 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000011 /* Product.swift */; };
+		A10000010000000000000012 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000012 /* Brand.swift */; };
+		A10000010000000000000013 /* AdaptiveFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000013 /* AdaptiveFeature.swift */; };
+		A10000010000000000000014 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000014 /* UserProfile.swift */; };
+		A10000010000000000000015 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000015 /* Category.swift */; };
+		A10000010000000000000016 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000016 /* Review.swift */; };
+		A10000010000000000000017 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000017 /* HomeScreen.swift */; };
+		A10000010000000000000018 /* BrowseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000018 /* BrowseScreen.swift */; };
+		A10000010000000000000019 /* SavedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000019 /* SavedScreen.swift */; };
+		A10000010000000000000020 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000020 /* ProfileScreen.swift */; };
+		A10000010000000000000021 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000021 /* OnboardingFlow.swift */; };
+		A10000010000000000000022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000022 /* Assets.xcassets */; };
+		A10000010000000000000023 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000023 /* SupabaseClient.swift */; };
+		A10000010000000000000024 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000024 /* MockDataProvider.swift */; };
+		A10000010000000000000025 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000025 /* ProductService.swift */; };
+		A10000010000000000000026 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000026 /* PreferenceService.swift */; };
+		A10000010000000000000027 /* BrandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000027 /* BrandService.swift */; };
+		A10000010000000000000028 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000028 /* CategoryService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A00000010000000000000001 /* Able.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Able.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000010000000000000001 /* AbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbleApp.swift; sourceTree = "<group>"; };
+		A20000010000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000010000000000000003 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A20000010000000000000004 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		A20000010000000000000005 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		A20000010000000000000006 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A20000010000000000000007 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
+		A20000010000000000000008 /* FeatureTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTag.swift; sourceTree = "<group>"; };
+		A20000010000000000000009 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A20000010000000000000010 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		A20000010000000000000011 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A20000010000000000000012 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		A20000010000000000000013 /* AdaptiveFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveFeature.swift; sourceTree = "<group>"; };
+		A20000010000000000000014 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		A20000010000000000000015 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		A20000010000000000000016 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		A20000010000000000000017 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		A20000010000000000000018 /* BrowseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseScreen.swift; sourceTree = "<group>"; };
+		A20000010000000000000019 /* SavedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreen.swift; sourceTree = "<group>"; };
+		A20000010000000000000020 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		A20000010000000000000021 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		A20000010000000000000022 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20000010000000000000023 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		A20000010000000000000024 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		A20000010000000000000025 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		A20000010000000000000026 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
+		A20000010000000000000027 /* BrandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandService.swift; sourceTree = "<group>"; };
+		A20000010000000000000028 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A40000010000000000000002 /* Able */,
+				A40000010000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A40000010000000000000002 /* Able */ = {
+			isa = PBXGroup;
+			children = (
+				A40000010000000000000004 /* App */,
+				A40000010000000000000005 /* DesignSystem */,
+				A40000010000000000000008 /* Models */,
+				A40000010000000000000009 /* Screens */,
+				A40000010000000000000010 /* Onboarding */,
+				A40000010000000000000011 /* Services */,
+				A20000010000000000000022 /* Assets.xcassets */,
+			);
+			path = Able;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000011 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000023 /* SupabaseClient.swift */,
+				A20000010000000000000024 /* MockDataProvider.swift */,
+				A20000010000000000000025 /* ProductService.swift */,
+				A20000010000000000000026 /* PreferenceService.swift */,
+				A20000010000000000000027 /* BrandService.swift */,
+				A20000010000000000000028 /* CategoryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000010000000000000001 /* Able.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000001 /* AbleApp.swift */,
+				A20000010000000000000002 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000005 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000003 /* Colors.swift */,
+				A20000010000000000000004 /* Typography.swift */,
+				A20000010000000000000005 /* Spacing.swift */,
+				A40000010000000000000006 /* Components */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000006 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000006 /* PrimaryButton.swift */,
+				A20000010000000000000007 /* ProductCard.swift */,
+				A20000010000000000000008 /* FeatureTag.swift */,
+				A20000010000000000000009 /* SearchBar.swift */,
+				A20000010000000000000010 /* EmptyState.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000008 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000011 /* Product.swift */,
+				A20000010000000000000012 /* Brand.swift */,
+				A20000010000000000000013 /* AdaptiveFeature.swift */,
+				A20000010000000000000014 /* UserProfile.swift */,
+				A20000010000000000000015 /* Category.swift */,
+				A20000010000000000000016 /* Review.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000009 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000017 /* HomeScreen.swift */,
+				A20000010000000000000018 /* BrowseScreen.swift */,
+				A20000010000000000000019 /* SavedScreen.swift */,
+				A20000010000000000000020 /* ProfileScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A40000010000000000000010 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000021 /* OnboardingFlow.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000010000000000000001 /* Able */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70000010000000000000001 /* Build configuration list for PBXNativeTarget "Able" */;
+			buildPhases = (
+				A50000010000000000000002 /* Sources */,
+				A30000010000000000000001 /* Frameworks */,
+				A50000010000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Able;
+			productName = Able;
+			productReference = A00000010000000000000001 /* Able.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A60000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A50000010000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A70000010000000000000002 /* Build configuration list for PBXProject "Able" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40000010000000000000001;
+			productRefGroup = A40000010000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50000010000000000000001 /* Able */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A50000010000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000022 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A50000010000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000001 /* AbleApp.swift in Sources */,
+				A10000010000000000000002 /* ContentView.swift in Sources */,
+				A10000010000000000000003 /* Colors.swift in Sources */,
+				A10000010000000000000004 /* Typography.swift in Sources */,
+				A10000010000000000000005 /* Spacing.swift in Sources */,
+				A10000010000000000000006 /* PrimaryButton.swift in Sources */,
+				A10000010000000000000007 /* ProductCard.swift in Sources */,
+				A10000010000000000000008 /* FeatureTag.swift in Sources */,
+				A10000010000000000000009 /* SearchBar.swift in Sources */,
+				A10000010000000000000010 /* EmptyState.swift in Sources */,
+				A10000010000000000000011 /* Product.swift in Sources */,
+				A10000010000000000000012 /* Brand.swift in Sources */,
+				A10000010000000000000013 /* AdaptiveFeature.swift in Sources */,
+				A10000010000000000000014 /* UserProfile.swift in Sources */,
+				A10000010000000000000015 /* Category.swift in Sources */,
+				A10000010000000000000016 /* Review.swift in Sources */,
+				A10000010000000000000017 /* HomeScreen.swift in Sources */,
+				A10000010000000000000018 /* BrowseScreen.swift in Sources */,
+				A10000010000000000000019 /* SavedScreen.swift in Sources */,
+				A10000010000000000000020 /* ProfileScreen.swift in Sources */,
+				A10000010000000000000021 /* OnboardingFlow.swift in Sources */,
+				A10000010000000000000023 /* SupabaseClient.swift in Sources */,
+				A10000010000000000000024 /* MockDataProvider.swift in Sources */,
+				A10000010000000000000025 /* ProductService.swift in Sources */,
+				A10000010000000000000026 /* PreferenceService.swift in Sources */,
+				A10000010000000000000027 /* BrandService.swift in Sources */,
+				A10000010000000000000028 /* CategoryService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A80000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A80000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A80000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Able;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irora.able;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A80000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Able;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irora.able;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A70000010000000000000001 /* Build configuration list for PBXNativeTarget "Able" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80000010000000000000003 /* Debug */,
+				A80000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70000010000000000000002 /* Build configuration list for PBXProject "Able" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80000010000000000000001 /* Debug */,
+				A80000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A60000010000000000000001 /* Project object */;
+}

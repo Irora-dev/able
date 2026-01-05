@@ -16,10 +16,8 @@ struct Category: Identifiable, Codable, Hashable {
     let createdAt: Date
     let updatedAt: Date
 
-    // MARK: - Relationships
+    // MARK: - Additional Properties
 
-    var parent: Category?
-    var children: [Category]?
     var productCount: Int?
 
     // MARK: - Computed Properties
@@ -29,8 +27,7 @@ struct Category: Identifiable, Codable, Hashable {
     }
 
     var hasChildren: Bool {
-        guard let children = children else { return false }
-        return !children.isEmpty
+        false // Computed from external data
     }
 
     var systemIconName: String {
@@ -38,24 +35,21 @@ struct Category: Identifiable, Codable, Hashable {
     }
 }
 
-// MARK: - Category Hierarchy
+// MARK: - Category Helpers
 
 extension Category {
 
-    /// Build category tree from flat list
-    static func buildTree(from categories: [Category]) -> [Category] {
-        let lookup = Dictionary(uniqueKeysWithValues: categories.map { ($0.id, $0) })
-        var roots: [Category] = []
+    /// Get root categories from a list
+    static func rootCategories(from categories: [Category]) -> [Category] {
+        categories
+            .filter { $0.parentId == nil }
+            .sorted { $0.sortOrder < $1.sortOrder }
+    }
 
-        for var category in categories {
-            if category.parentId == nil {
-                category.children = categories
-                    .filter { $0.parentId == category.id }
-                    .sorted { $0.sortOrder < $1.sortOrder }
-                roots.append(category)
-            }
-        }
-
-        return roots.sorted { $0.sortOrder < $1.sortOrder }
+    /// Get children of a category from a list
+    static func children(of categoryId: UUID, from categories: [Category]) -> [Category] {
+        categories
+            .filter { $0.parentId == categoryId }
+            .sorted { $0.sortOrder < $1.sortOrder }
     }
 }

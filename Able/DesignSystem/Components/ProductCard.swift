@@ -19,8 +19,8 @@ struct ProductCard: View {
                 // Content
                 VStack(alignment: .leading, spacing: AbleSpacing.space1) {
                     // Brand
-                    if let brand = product.brand {
-                        Text(brand.name)
+                    if let brandName = product.brandName {
+                        Text(brandName)
                             .font(AbleTypography.caption1)
                             .foregroundColor(Color.ableSecondaryText(for: colorScheme))
                     }
@@ -148,8 +148,8 @@ struct ProductCard: View {
 
     private var accessibilityDescription: String {
         var desc = product.name
-        if let brand = product.brand {
-            desc = "\(brand.name) \(desc)"
+        if let brandName = product.brandName {
+            desc = "\(brandName) \(desc)"
         }
         desc += ", \(product.formattedPrice)"
         if product.isOnSale {
@@ -187,7 +187,7 @@ struct RoundedCorner: Shape {
 // MARK: - Preview
 
 #Preview {
-    let sampleProduct = Product(
+    var sampleProduct = Product(
         id: UUID(),
         brandId: UUID(),
         categoryId: UUID(),
@@ -212,23 +212,7 @@ struct RoundedCorner: Shape {
         saveCount: 128,
         createdAt: Date(),
         updatedAt: Date(),
-        brand: Brand(
-            id: UUID(),
-            name: "Tommy Adaptive",
-            slug: "tommy-adaptive",
-            description: nil,
-            logoUrl: nil,
-            websiteUrl: "https://tommy.com",
-            isAdaptiveOnly: false,
-            hasMainstreamLine: true,
-            affiliateNetwork: nil,
-            affiliateProgramId: nil,
-            commissionRate: nil,
-            priceTier: .mid,
-            isActive: true,
-            createdAt: Date(),
-            updatedAt: Date()
-        )
+        brandName: "Tommy Adaptive"
     )
 
     ScrollView {

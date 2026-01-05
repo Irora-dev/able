@@ -28,11 +28,9 @@ struct Product: Identifiable, Codable, Hashable {
     let createdAt: Date
     let updatedAt: Date
 
-    // MARK: - Relationships (populated separately)
+    // MARK: - Display Properties (populated from joins)
 
-    var brand: Brand?
-    var category: Category?
-    var features: [AdaptiveFeature]?
+    var brandName: String?
 
     // MARK: - Computed Properties
 

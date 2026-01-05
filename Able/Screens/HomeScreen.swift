@@ -3,11 +3,13 @@ import SwiftUI
 struct HomeScreen: View {
     @EnvironmentObject private var appState: AppState
     @Environment(\.colorScheme) private var colorScheme
+
+    @StateObject private var productService = ProductService.shared
+    @StateObject private var preferenceService = PreferenceService.shared
+    @StateObject private var categoryService = CategoryService.shared
+
     @State private var searchText = ""
-    @State private var featuredProducts: [Product] = []
-    @State private var newArrivals: [Product] = []
-    @State private var forYou: [Product] = []
-    @State private var isLoading = true
+    @State private var forYouProducts: [Product] = []
 
     var body: some View {
         NavigationStack {
@@ -17,36 +19,52 @@ struct HomeScreen: View {
                     SearchBar(text: $searchText, placeholder: "Search adaptive clothing")
                         .ableScreenPadding()
 
-                    if isLoading {
+                    if productService.isLoading && productService.allProducts.isEmpty {
                         LoadingStateView(message: "Loading your feed...")
                             .frame(height: 300)
                     } else {
-                        // For You section
-                        if !forYou.isEmpty {
+                        // For You section (personalized)
+                        if !forYouProducts.isEmpty {
                             ProductSection(
                                 title: "For You",
-                                products: forYou
+                                subtitle: "Based on your preferences",
+                                products: forYouProducts
                             )
                         }
 
                         // Featured section
-                        if !featuredProducts.isEmpty {
+                        if !productService.featuredProducts.isEmpty {
                             ProductSection(
                                 title: "Featured",
-                                products: featuredProducts
+                                subtitle: "Top-rated adaptive clothing",
+                                products: productService.featuredProducts
                             )
                         }
 
                         // New Arrivals section
-                        if !newArrivals.isEmpty {
+                        if !productService.newArrivals.isEmpty {
                             ProductSection(
                                 title: "New Arrivals",
-                                products: newArrivals
+                                subtitle: "Just added",
+                                products: productService.newArrivals
+                            )
+                        }
+
+                        // On Sale section
+                        if !productService.onSale.isEmpty {
+                            ProductSection(
+                                title: "On Sale",
+                                subtitle: "Price drops",
+                                products: productService.onSale,
+                                showSaleBadge: true
                             )
                         }
 
                         // Categories section
-                        CategoriesSection()
+                        CategoriesSection(categories: categoryService.rootCategories)
+
+                        // Shop by Brand section
+                        BrandsSection()
                     }
                 }
                 .padding(.vertical, AbleSpacing.space4)
@@ -55,7 +73,7 @@ struct HomeScreen: View {
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.large)
             .refreshable {
-                await loadData()
+                await loadData(forceRefresh: true)
             }
         }
         .task {
@@ -63,12 +81,17 @@ struct HomeScreen: View {
         }
     }
 
-    private func loadData() async {
-        isLoading = true
-        // TODO: Fetch from Supabase
-        // Simulating network delay
-        try? await Task.sleep(nanoseconds: 500_000_000)
-        isLoading = false
+    private func loadData(forceRefresh: Bool = false) async {
+        async let productsTask: () = productService.fetchAllProducts(forceRefresh: forceRefresh)
+        async let categoriesTask: () = categoryService.fetchAllCategories(forceRefresh: forceRefresh)
+
+        _ = await (productsTask, categoriesTask)
+
+        // Fetch personalized "For You" products
+        forYouProducts = await productService.fetchProducts(
+            matching: preferenceService.userPreferences,
+            limit: 10
+        )
     }
 }
 
@@ -76,15 +99,25 @@ struct HomeScreen: View {
 
 struct ProductSection: View {
     let title: String
+    var subtitle: String?
     let products: [Product]
+    var showSaleBadge: Bool = false
     var seeAllAction: (() -> Void)?
 
     var body: some View {
         VStack(alignment: .leading, spacing: AbleSpacing.space3) {
             HStack {
-                Text(title)
-                    .font(AbleTypography.title3)
-                    .foregroundColor(.primary)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(AbleTypography.title3)
+                        .foregroundColor(.primary)
+
+                    if let subtitle = subtitle {
+                        Text(subtitle)
+                            .font(AbleTypography.caption1)
+                            .foregroundColor(.secondary)
+                    }
+                }
 
                 Spacer()
 
@@ -117,16 +150,8 @@ struct ProductSection: View {
 // MARK: - Categories Section
 
 struct CategoriesSection: View {
+    let categories: [Category]
     @Environment(\.colorScheme) private var colorScheme
-
-    let categories = [
-        ("Tops", "tshirt", ProductCategory.tops),
-        ("Bottoms", "figure.stand", ProductCategory.bottoms),
-        ("Dresses", "figure.dress.line.vertical.figure", ProductCategory.dresses),
-        ("Outerwear", "cloud.rain", ProductCategory.outerwear),
-        ("Footwear", "shoe", ProductCategory.footwear),
-        ("Kids", "person.2", ProductCategory.kidsTops)
-    ]
 
     var body: some View {
         VStack(alignment: .leading, spacing: AbleSpacing.space3) {
@@ -143,11 +168,11 @@ struct CategoriesSection: View {
                 ],
                 spacing: AbleSpacing.space3
             ) {
-                ForEach(categories, id: \.0) { category in
-                    CategoryCard(
-                        title: category.0,
-                        iconName: category.1
-                    )
+                ForEach(categories) { category in
+                    NavigationLink(value: category) {
+                        CategoryCard(category: category)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .ableScreenPadding()
@@ -158,14 +183,13 @@ struct CategoriesSection: View {
 // MARK: - Category Card
 
 struct CategoryCard: View {
-    let title: String
-    let iconName: String
+    let category: Category
 
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(spacing: AbleSpacing.space2) {
-            Image(systemName: iconName)
+            Image(systemName: category.systemIconName)
                 .font(.system(size: 28))
                 .foregroundColor(Color.ableAccent(for: colorScheme))
                 .frame(width: 56, height: 56)
@@ -176,7 +200,7 @@ struct CategoryCard: View {
                 )
                 .clipShape(Circle())
 
-            Text(title)
+            Text(category.name)
                 .font(AbleTypography.caption1)
                 .foregroundColor(Color.ablePrimaryText(for: colorScheme))
         }
@@ -185,8 +209,79 @@ struct CategoryCard: View {
         .background(Color.ableCardBackground(for: colorScheme))
         .cornerRadius(AbleSpacing.cardCornerRadius)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(title) category")
+        .accessibilityLabel("\(category.name) category")
         .accessibilityAddTraits(.isButton)
+    }
+}
+
+// MARK: - Brands Section
+
+struct BrandsSection: View {
+    @StateObject private var brandService = BrandService.shared
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: AbleSpacing.space3) {
+            Text("Shop by Brand")
+                .font(AbleTypography.title3)
+                .foregroundColor(.primary)
+                .ableScreenPadding()
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: AbleSpacing.space3) {
+                    ForEach(brandService.allBrands) { brand in
+                        NavigationLink(value: brand) {
+                            BrandCard(brand: brand)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .padding(.horizontal, AbleSpacing.screenPadding)
+            }
+        }
+        .task {
+            await brandService.fetchAllBrands()
+        }
+    }
+}
+
+// MARK: - Brand Card
+
+struct BrandCard: View {
+    let brand: Brand
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: AbleSpacing.space2) {
+            // Brand logo placeholder
+            Circle()
+                .fill(Color.ableCream)
+                .frame(width: 60, height: 60)
+                .overlay(
+                    Text(brand.name.prefix(1))
+                        .font(AbleTypography.title2)
+                        .foregroundColor(Color.ableInk)
+                )
+
+            Text(brand.name)
+                .font(AbleTypography.subheadline)
+                .fontWeight(.medium)
+                .foregroundColor(Color.ablePrimaryText(for: colorScheme))
+                .lineLimit(1)
+
+            Text(brand.priceTier.priceIndicator)
+                .font(AbleTypography.caption1)
+                .foregroundColor(Color.ableStone)
+
+            if brand.isAdaptiveOnly {
+                SimpleTag(text: "Adaptive Only", style: .accent)
+            }
+        }
+        .frame(width: 120)
+        .padding(AbleSpacing.space3)
+        .background(Color.ableCardBackground(for: colorScheme))
+        .cornerRadius(AbleSpacing.cardCornerRadius)
     }
 }
 
