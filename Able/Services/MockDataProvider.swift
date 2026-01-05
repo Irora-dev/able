@@ -608,7 +608,7 @@ enum MockData {
         rating: Decimal
     ) -> Product {
         Product(
-            id: UUID(uuidString: "\(id)-0000-0000-0000-000000000000")!,
+            id: UUID(),
             brandId: UUID(uuidString: brandId)!,
             categoryId: UUID(uuidString: categoryId)!,
             name: name,
